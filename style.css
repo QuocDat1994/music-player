@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  background-color: #c3f5ff;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-family: "Roboto";
+}
+
+.player {
+  position: relative;
+  width: 300px;
+  height: 550px;
+  padding: 2rem 1rem;
+  border: 10px solid white;
+  border-radius: 50px;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#90d4e2), to(#5ebbce));
+  background-image: linear-gradient(to bottom right, #90d4e2, #5ebbce);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player > * {
+  position: relative;
+}
+
+.player::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 65%;
+  background-color: white;
+  border-radius: 40% 0 30px 30px;
+}
+
+.player .status {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.player .album-art {
+  width: 70%;
+  margin-top: 3rem;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 5px 40px 10px #90d4e2;
+          box-shadow: 0 5px 40px 10px #90d4e2;
+}
+
+.player .album-art::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+
+.player .album-art__cover {
+  width: 100%;
+  border: 8px solid white;
+  border-radius: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.player .song-info {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.player .song-info__name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #182e4d;
+}
+
+.player .song-info__singer {
+  color: #c1c7dc;
+}
+
+.player .progress-container {
+  width: 80%;
+  margin-top: 1.5rem;
+}
+
+.player .progress-container .duration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #182e4d;
+  font-size: 0.9rem;
+}
+
+.player .progress-container .progress {
+  width: 100%;
+  height: 0.6rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.player .progress-container .progress[value]::-webkit-progress-bar {
+  background-color: #f2f3f8;
+  border-radius: 100px;
+}
+
+.player .progress-container .progress[value]::-webkit-progress-value {
+  background-color: #5ebbce;
+  border-radius: 100px;
+}
+
+.player .control {
+  margin-top: 3rem;
+}
+
+.player .control .btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  color: #5ebbce;
+  background-color: #d3edf2;
+  -webkit-box-shadow: 0 10px 10px -5px #b8e4ed;
+          box-shadow: 0 10px 10px -5px #b8e4ed;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.player .control .btn:hover {
+  color: white;
+  background-color: #5ebbce;
+}
+
+.player .control #play-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 1rem;
+}
+
+.player .control #play-btn .fa-pause {
+  display: none;
+}
+
+.player.active .status {
+  visibility: initial;
+  -webkit-animation: blink-animation 1s ease-in-out infinite alternate;
+          animation: blink-animation 1s ease-in-out infinite alternate;
+}
+
+.player.active .album-art {
+  -webkit-animation: rotate-animation 30s linear infinite;
+          animation: rotate-animation 30s linear infinite;
+}
+
+.player.active .control #play-btn {
+  color: white;
+  background-color: #5ebbce;
+}
+
+.player.active .control #play-btn .fa-play {
+  display: none;
+}
+
+.player.active .control #play-btn .fa-pause {
+  display: block;
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    opacity: 0.4;
+  }
+}
+
+@-webkit-keyframes rotate-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <section id="player" class="player">
+      <div class="white-background"></div>
+      <div id="status" class="status">Now Playing</div>
+      <audio id="audio" src="" ></audio>
+      <section class="album-art">
+        <img id="cover" class="album-art__cover" src="" />
+      </section>
+      <section class="song-info">
+        <div id="song-name" class="song-info__name">See you again</div>
+        <div id="song-singer" class="song-info__singer">See you again</div>
+      </section>
+      <section class="progress-container">
+        <div class="duration">
+          <span id="duration-start" class="duration__start">00:00</span>
+          <span id="duration-end" class="duration__end">05:00</span>
+        </div>
+        <progress id="progress" class="progress" value="32" max="100">
+      </section>
+      <section class="control">
+        <button id="prev-btn" class="btn"><i class="fas fa-backward"></i></button>
+        <button id="play-btn" class="btn">
+          <i class="fas fa-play"></i>
+          <i class="fas fa-pause"></i>
+        </button>
+        <button id="next-btn" class="btn">
+          <i class="fas fa-forward"></i>
+        </button>
+      </section>
+      </progress>
+    </section>
+  </body>
+</html>
