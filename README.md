@@ -4,7 +4,7 @@ Music Player
 
 A music player built using vanilla Javascript. It has basic controls such as play, pause, next, prev.
 
-You can interact with the progress bar also :D
+You can also interact with the progress bar :D
 
 Demo: http://music-player.quocdat1994.surge.sh/
 
